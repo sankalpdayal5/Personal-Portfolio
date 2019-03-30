@@ -1,0 +1,806 @@
+body {
+    margin: 0px;
+}
+
+/* Navigation bar */
+
+#navbar {
+    background-color: rgb(0, 119, 255);
+    float: right;
+    width: 100%;
+    padding: 20px 0px;
+    position: fixed;
+    top: 0px;
+    text-align: right;
+    box-sizing: border-box;
+    display: block;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.6s;
+    z-index: 2;
+}
+
+/* Animation for Navigation bar */
+
+@keyframes navbar_animation {
+    from {
+        top: 100px;
+        opacity: 1;
+    }
+    to {
+        top: 50px;
+        opacity: 0;
+    }
+}
+
+/* Navbar tags */
+
+#navbar a {
+    padding: 10px 15px;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 10px;
+    color: #000;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+/* Navigation tags container */
+
+#navtags {
+    padding: 20px 50px;
+    margin-right: 20px;
+    width: fit-content;
+    float: right;
+    padding: 5px;
+}
+
+/* Animation for navbar tags - Border from Y to X  */
+
+.borderYtoX a:before,
+.borderYtoX a:after {
+    position: absolute;
+    opacity: 0.5;
+    height: 100%;
+    width: 2px;
+    content: '';
+    background: #000;
+    transition: 0.3s;
+}
+
+.borderYtoX a:before {
+    left: 0px;
+    top: 0px;
+}
+
+.borderYtoX a:after {
+    right: 0px;
+    bottom: 0px;
+}
+
+/* .borderYtoX a:hover:before, */
+
+.borderYtoX a:hover:after {
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+
+#snackbar_about,
+#snackbar_projects,
+#snackbar_contact {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+
+#snackbar_about.show,
+#snackbar_projects.show,
+#snackbar_contact.show {
+    visibility: visible;
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: snackbar_fadein 0.5s, snackbar_fadeout 0.5s 2.5s;
+    animation: snackbar_fadein 0.5s, snackbar_fadeout 0.5s 2.5s;
+    /* animation: animation_name animation_duration animation_delay */
+}
+
+/* Animations to fade the snackbar in and out */
+
+/* @-webkit-keyframes snackbar_fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes snackbar_fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+} */
+
+@-webkit-keyframes snackbar_fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes snackbar_fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+/* Navbar ends with all its sub-elements */
+
+/* Main content starts */
+
+.article_heading {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+/* First section fills the viewpage */
+
+#welcome-section {
+    height: inherit;
+    padding: 20vh 20px;
+    /* background-color: rgb(255, 169, 248); */
+    min-height: 60vh;
+    text-align: center;
+}
+
+.welcome-element {
+    font-family: cursive;
+    margin-top: 20vh;
+}
+
+#welcome-msg {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    margin-bottom: 5vh;
+}
+
+.my-info {
+    line-height: 5px;
+    margin-top: 0vh;
+}
+
+/* First section ends */
+
+#parallax1 {
+    /* The image used */
+    background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+    background-image: url('/Wallpapers/bg83.jpg');
+}
+
+.parallax {
+    padding: 50px;
+    /* Full height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    background-color: #cccccc;
+    /* transform: translateZ(.25px) translateY(-100%); */
+}
+
+/* Second section */
+
+#projects {
+    margin: 0px;
+    padding: 60px 0px;
+    width: 100%;
+    height: max-content;
+    text-align: center;
+}
+
+#projects * {
+    box-sizing: border-box;
+}
+
+/* Containing buttons for filtering projects */
+
+#myBtnContainer {
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+#myBtnContainer h1 {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+.show {
+    display: block;
+}
+
+/* Style the buttons */
+
+#myBtnContainer .btn {
+    border: 1px solid black;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#myBtnContainer .btn:hover {
+    background-color: #ddd;
+}
+
+#myBtnContainer .btn.active {
+    background-color: #666;
+    color: white;
+}
+
+/* Projects content starts */
+
+#projects a {
+    text-decoration: none;
+}
+
+/* The project's entire icon */
+
+#projects figure {
+    border: 2px solid rgb(0, 212, 0);
+    width: auto;
+    height: auto;
+    margin: 30px;
+    border-radius: 5px;
+}
+
+#project-container {
+    padding: 0px;
+    text-align: center;
+    height: fit-content;
+}
+
+#project-container:after {
+    content: "";
+    display: none;
+    clear: both;
+}
+
+/* Contains content of the project */
+
+.project_content {
+    padding: 0px;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    width: 33.3%;
+    height: auto;
+    margin: auto;
+    float: left;
+    display: none;
+}
+
+/* The "show" class is added to the filtered elements */
+
+.show {
+    display: block;
+}
+
+.project-tile {
+    /* border: 1px solid blue; */
+    background-color: rgb(255, 216, 132);
+    left: 0px;
+    padding: 0px;
+    /* width: fit-content; */
+    cursor: pointer;
+}
+
+.project-img {
+    width: 95%;
+    padding: 0px;
+    border: 1px solid black;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.project-tile figcaption {
+    background-color: skyblue;
+    text-align: center;
+    padding: 10px 0px;
+    border: 1px solid skyblue;
+}
+
+/* Link for seeing more projects on codepen.io */
+
+#projects label {
+    margin-top: 20px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+/* Tooltip text for more projects on codepen.io */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: max-content;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 0%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 20px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Projects section ends */
+
+#parallax2 {
+    background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+    background-image: url('/Wallpapers/bg104.jpg');
+}
+
+/* Contact section starts */
+
+#contact {
+    /* background-color: rgb(187, 255, 221); */
+    padding: 60px 50px;
+    height: min-content;
+    padding-bottom: 550px;
+}
+
+#contact * {
+    box-sizing: border-box;
+}
+
+/* Profile Card */
+
+.card {
+    box-shadow: 10px 10px 20px 0 rgb(0, 0, 0, 0.2);
+    max-width: 25%;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(255, 236, 153);
+    float: left;
+    box-sizing: border-box;
+}
+
+.card img {
+    box-sizing: border-box;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 10px 20px 0 rgb(0, 0, 0, 0.2);
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.card a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+.card button:hover,
+.card a:hover {
+    opacity: 0.7;
+}
+
+/* Modal for contact button */
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animate_model;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animate_model;
+    animation-duration: 0.4s
+}
+
+/* Animation for modal */
+
+@-webkit-keyframes animate_model {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animate_model {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Close button ends */
+
+/* Model content */
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-body a {
+    font-size: 15px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Model content ends */
+
+/* Form for taking inputs */
+
+.form_container {
+    float: left;
+    width: 60%;
+    margin: 0px 5% 20px 10%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    background-color: rgb(0, 78, 131);
+}
+
+#form_heading {
+    color: white;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.form_container input[type=text],
+.form_container select,
+.form_container textarea {
+    width: 100%;
+    background-color: rgb(209, 234, 255);
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.form_container label {
+    display: inline-block;
+    background-color: rgb(255, 191, 191);
+    width: 80%;
+    border-radius: 5px;
+    padding: 10px;
+    /* box-sizing: border-box; */
+}
+
+.form_container input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+.form_container input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Labels */
+
+.form_container .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+/* Inputs */
+
+.form_container .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+
+.form_container .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 'Go to top' button at bottom right */
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    opacity: 0.5;
+}
+
+#myBtn:hover {
+    background-color: rgb(224, 0, 0);
+    opacity: 1;
+}
+
+/* Progress bar at the bottom */
+
+.progress-container {
+    position: fixed;
+    bottom: 0;
+    /* margin-top: 20px; */
+    width: 100%;
+    height: 5px;
+    border-top: 2px white solid;
+    border-bottom: 2px white solid;
+    background: white;
+}
+
+.progress-bar {
+    height: 6px;
+    padding: 0px;
+    margin: 0px;
+    background: rgb(0, 0, 0);
+    /* For browsers that do not support gradients */
+    background: linear-gradient(green, yellow);
+    /* Standard syntax (must be last) */
+    width: 0%;
+}
+
+/* Custom scrollbar */
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 2px 2px 15px rgb(0, 0, 0);
+    /* border-radius: 15px; */
+    /* padding: 5px; */
+    width: 20px;
+    border-left: 1px solid black;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: rgb(234, 0, 255);
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(210, 0, 230);
+}
+
+/* Scrollbar ends */
+
+/* Responsive media query */
+
+@media only screen and (max-width:1000px) {
+    .project_content {
+        width: 50%;
+    }
+    .card {
+        max-width: 35%;
+    }
+    .form_container {
+        width: 60%;
+        margin: 0px 0% 20px 5%;
+    }
+    .form_container label {
+        width: 90%;
+        padding: 10px 5px 10px 5px;
+    }
+    .parallax {
+        padding: 0px;
+    }
+}
+
+@media (max-width:800px) {
+    .project_content {
+        font-size: 15px;
+    }
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    #projects figure {
+        margin: 10px;
+    }
+    #contact {
+        padding-bottom: 1000px;
+    }
+    .card {
+        max-width: 50%;
+        margin: 0px 25%;
+    }
+    .form_container {
+        width: 100%;
+        margin: 50px 0% 20px 0%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    #project-content {
+        width: 100%;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    #projects figure {
+        margin: 20px;
+    }
+    .project_content {
+        width: 100%;
+    }
+    #contact {
+        padding-bottom: 1200px;
+    }
+    .card {
+        max-width: 80%;
+        margin: 0px 10%;
+    }
+    .form_container {
+        width: 100%;
+        margin: 50px 0% 20px 0%;
+    }
+    .form_container .col-25,
+    .form_container .col-75,
+    .form_container input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+    .form_container .col-25 {
+        margin-top: 15px;
+        margin-bottom: 2px;
+    }
+}

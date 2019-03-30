@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body onload="timedText()">
+
+    <nav id="navbar" class="navbar">
+        <div id="navtags" class="borderYtoX">
+            <a href="#welcome-section" onclick="aboutSnackbar()">About</a>
+            <div id="snackbar_about">This section is about me </div>
+            <a href="#projects" onclick="projectsSnackbar()">Projects</a>
+            <div id="snackbar_projects">See some of my projects here</div>
+            <a href="#contact" onclick="contactSnackbar()">Contact</a>
+            <div id="snackbar_contact">Wanna contact me ?</div>
+        </div>
+    </nav>
+
+    <div id="main">
+
+        <article id="welcome-section">
+            <h1 id="welcome-msg" class="welcome-element">Welcome to my Portfolio</h1>
+            <h1 id="welcome-name" class="welcome-element my-info">I am Sankalp Dayal</h1>
+            <h3 class="welcome-element my-info">&amp;</h3>
+            <h3 id="welcome-about" class="welcome-element my-info">I am
+                <span id="profession-span">homo sapiens</span>
+            </h3>
+        </article>
+
+        <div id="parallax1" class="parallax"></div>
+
+        <article id="projects" class="b_article">
+
+            <h1 class="article_heading">Some of my selected projects ... </h1>
+
+            <div id="myBtnContainer">
+                <button id="allBtn" class="btn active" onclick="filterSelection('all')"> Show all</button>
+                <button id="webpagesBtn" class="btn" onclick="filterSelection('webpage')"> Web Pages</button>
+                <button id="webappsBtn" class="btn" onclick="filterSelection('webapp')"> Web Apps</button>
+                <button id="apisBtn" class="btn" onclick="filterSelection('api')"> Integrated APIs</button>
+            </div>
+
+            <div id="project-container">
+
+                <div class="project_content webpage">
+                    <a href="https://codepen.io/sankalpdayal5/full/XYgpKO/" target="_blank">
+                        <figure class="project-tile">
+                            <img src="Projects/p1.png" alt="Tribute page for Mahatma Gandhi" class="project-img">
+                            <a href="https://codepen.io/sankalpdayal5/full/XYgpKO/" target="_blank"
+                                style="text-decoration: none;">
+                                <figcaption class="project-caption">Tribute Page</figcaption>
+                            </a>
+                        </figure>
+                    </a>
+                </div>
+
+
+                <div class="project_content api">
+                    <a href="https://codepen.io/sankalpdayal5/full/RyVYeZ/" target="_blank">
+                        <figure class="project-tile">
+                            <img src="Projects/p2.png" alt="Random Quote Generator" class="project-img">
+                            <a href="https://codepen.io/sankalpdayal5/full/RyVYeZ/" target="_blank"
+                                style="text-decoration: none;">
+                                <figcaption class="project-caption">Random Quote Generator</figcaption>
+                            </a>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="project_content webapp api">
+                    <a href="https://codepen.io/sankalpdayal5/full/LmzrKx/" target="_blank">
+                        <figure class="project-tile">
+                            <img src="Projects/p3.png" alt="Weather App" class="project-img">
+                            <a href="https://codepen.io/sankalpdayal5/full/LmzrKx/" target="_blank"
+                                style="text-decoration: none;">
+                                <figcaption class="project-caption">Weather App</figcaption>
+                            </a>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="project_content webpage">
+                    <a href="https://codepen.io/sankalpdayal5/full/wXqymB/" target="_blank">
+                        <figure class="project-tile">
+                            <img src="Projects/p4.png" alt="Survey Form" class="project-img">
+                            <a href="https://codepen.io/sankalpdayal5/full/wXqymB/" target="_blank"
+                                style="text-decoration: none;">
+                                <figcaption class="project-caption">Survey Form</figcaption>
+                            </a>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="project_content webpage">
+                    <a href="https://codepen.io/sankalpdayal5/full/jKapjG/" target="_blank">
+                        <figure class="project-tile">
+                            <img src="Projects/p5.png" alt="Product Landing Page" class="project-img">
+                            <a href="https://codepen.io/sankalpdayal5/full/jKapjG/" target="_blank"
+                                style="text-decoration: none;">
+                                <figcaption class="project-caption">Product Landing Page</figcaption>
+                            </a>
+                        </figure>
+                    </a>
+                </div>
+
+                <div class="project_content webpage">
+                    <a href="https://codepen.io/sankalpdayal5/full/aKGxLV/" target="_blank">
+                        <figure class="project-tile">
+                            <img src="Projects/p6.png" alt="Javascript Documentation" class="project-img">
+                            <a href="https://codepen.io/sankalpdayal5/full/aKGxLV/" target="_blank"
+                                style="text-decoration: none;">
+                                <figcaption class="project-caption">Javascript Documentation</figcaption>
+                            </a>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+
+            <label id="all_projects_label">Check out all of my projects</label>
+            <label class="tooltip">
+                <a href="https://codepen.io/sankalpdayal5/" target="_blank">here</a>
+                <span class="tooltiptext">Opens codepen.io</span>
+            </label>
+
+        </article>
+
+        <div id="parallax2" class="parallax"></div>
+
+        <article id="contact" class="b_article">
+            <h1 class="article_heading">Contact id</h1>
+
+            <div class="card">
+                <img src="/Wallpapers/cover.jpg" alt="Sankalp Dayal" style="width:100%">
+                <h1>Sankalp Dayal</h1>
+                <p class="title">Student of Computer Science</p>
+                <p>VIT University</p>
+                <div>
+                    <a href="https://twitter.com/sankalp_dayal" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sankalpdayal00" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sankalpdayal5/" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/sankalpdayal5" target="_blank" id="profile-link">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <a href="https://codepen.io/sankalpdayal5/" target="_blank">
+                        <i class="fa fa-codepen"></i>
+                    </a>
+                </div>
+
+                <button id="contact_btn">Contact</button>
+
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>My Conatct info</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Contact no - 9876543210</p>
+                            <p>Email id -
+                                <a href="mailto:sankalpdayal5@gmail.com">sankalpdayal5@gmail.com</a>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <h3>See you soon buddy</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form_container">
+                <h2 id="form_heading">What's in your mind ?</h2>
+                <form>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="name" name="name" placeholder="Your name..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="topic">Topic</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="topic" name="topic" placeholder="Your topic of interest..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="profession">Profession</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="profession" name="profession">
+                                <option value="select_profession" selected disabled>Select one of these</option>
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="subject" name="subject" placeholder="Write what's in your mind.. "
+                                style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+
+        </article>
+
+    </div>
+
+
+
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <!-- Top -->
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+
+</body>
+
+</html>
